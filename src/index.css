@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #080c14;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+}
+
+/* Liquid Glass Core Classes */
+.liquid-glass {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 20px 50px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.liquid-glass-subtle {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.liquid-glass-elevated {
+  background: rgba(18, 28, 48, 0.7);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 24px 64px -12px rgba(0, 0, 0, 0.6),
+    0 0 24px 0 rgba(45, 212, 191, 0.06),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.2);
+}
+
+.liquid-glass-input {
+  background: rgba(8, 14, 26, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-input:focus {
+  border-color: rgba(94, 234, 212, 0.4);
+  box-shadow: 
+    0 0 0 3px rgba(45, 212, 191, 0.1),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+  outline: none;
+}
+
+/* Fluid Liquid Glow Animations */
+@keyframes liquidFlow1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.1);
+    opacity: 0.45;
+  }
+  66% {
+    transform: translate(-25px, 20px) scale(0.95);
+    opacity: 0.3;
+  }
+}
+
+@keyframes liquidFlow2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.25;
+  }
+  33% {
+    transform: translate(-40px, 35px) scale(1.15);
+    opacity: 0.35;
+  }
+  66% {
+    transform: translate(25px, -30px) scale(0.9);
+    opacity: 0.2;
+  }
+}
+
+@keyframes liquidFlow3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(35px, 30px) scale(1.08);
+    opacity: 0.3;
+  }
+}
+
+.animate-liquid-1 {
+  animation: liquidFlow1 18s ease-in-out infinite;
+}
+
+.animate-liquid-2 {
+  animation: liquidFlow2 22s ease-in-out infinite;
+}
+
+.animate-liquid-3 {
+  animation: liquidFlow3 26s ease-in-out infinite;
+}
+
+/* Subtle Shimmer for interactive elements */
+.liquid-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: all 0.75s ease;
+}
+
+.liquid-shimmer:hover::after {
+  left: 150%;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Typographic utility */
+.font-display {
+  font-family: var(--font-serif);
+}
+
+.font-code {
+  font-family: var(--font-mono);
+}

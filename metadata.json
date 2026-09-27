@@ -1,0 +1,6 @@
+{
+  "name": "AuraLearn - Liquid AI Study Companion",
+  "description": "Personalized Socratic AI tutoring, deep complex question explanations, and adaptive study schedule organizer in a calming liquid glass workspace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
